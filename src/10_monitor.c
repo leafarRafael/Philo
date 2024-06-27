@@ -6,11 +6,12 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 08:31:36 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/27 11:55:33 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 12:39:50 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
+#include <unistd.h>
 
 static int	valid_dead(t_no *no, t_lst *lst);
 
@@ -21,9 +22,12 @@ int	monitor(t_lst *lst)
 	node = lst->head;
 	while (1)
 	{
+		if (lst->is_dead)
+			break ;
 		if (valid_dead(node, lst))
 			break ;
 		node = node->next;
+		usleep(0000300);
 	}
 	return (0);
 }

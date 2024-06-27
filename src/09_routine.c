@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 09:40:22 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/27 11:24:17 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 12:59:09 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*routine(void *ptr)
 		return (NULL);
 	if (valid_nbr_meals(no))
 		return (NULL);
-	routine(ptr);
+	routine(ptr);	
 	return (NULL);
 }
 
