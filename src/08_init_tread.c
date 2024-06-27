@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 09:41:13 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/26 17:22:05 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 11:20:34 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_init_thread(t_lst *lst)
 		return (1);
 	if (init_join(lst))
 		return (1);
+	monitor(lst);
 	return (0);
 }
 
@@ -41,9 +42,7 @@ static int	init_mutex(t_lst *lst)
 	no = lst->head;
 	if (pthread_mutex_init(&lst->output_mutex, NULL))
 		return (printf("error pthread_mutex_init()\n"));
-	if (pthread_mutex_init(&lst->dead, NULL))
-		return (printf("error pthread_mutex_init()\n"));
-	if (pthread_mutex_init(&lst->mutex, NULL))
+	if (pthread_mutex_init(&lst->dead_mutex, NULL))
 		return (printf("error pthread_mutex_init()\n"));
 	while (i < lst->size)
 	{
@@ -66,6 +65,7 @@ static int	init_tread(t_lst *lst)
 	{
 		if (pthread_create(&no->th_philo, NULL, &routine, no))
 			return (printf("error pthread_create()\n"));
+		usleep(0000300);
 		no = no->next;
 		i++;
 	}
@@ -81,7 +81,7 @@ static int	init_join(t_lst *lst)
 	no = lst->head;
 	while (i < lst->size)
 	{
-		if (pthread_join(no->th_philo, NULL))
+		if (pthread_detach(no->th_philo))
 			return (printf("error pthread_join()\n"));
 		no = no->next;
 		i++;

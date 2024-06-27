@@ -6,22 +6,22 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 07:50:37 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/25 07:54:08 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 11:57:23 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "philo.h"
+#include <stdio.h>
 
 static int	is_nbr(char c);
-static int	put_msg();
+static int	put_msg(void);
 
 int	valid_arguments(int argc, char *argv[])
 {
 	int	i;
 	int	x;
 
-	if (argc <= 4 || argc >= 7 )
+	if (argc <= 4 || argc >= 7)
 		return (put_msg());
 	i = 1;
 	while (argv[i])
@@ -43,9 +43,10 @@ static int	is_nbr(char c)
 	return (c < '0' || c > '9');
 }
 
-static int	put_msg()
+static int	put_msg(void)
 {
-	printf("The program expects to receive up to 5 positive numerical arguments:\n");
+	printf("The program expects to receive");
+	printf(" up to 5 positive numerical arguments:\n");
 	printf("First:			%s\n", ARG1);
 	printf("Second:			%s\n", ARG2);
 	printf("Third:			%s\n", ARG3);

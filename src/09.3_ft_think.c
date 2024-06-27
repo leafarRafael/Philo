@@ -6,12 +6,12 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 12:42:49 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/26 14:31:50 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 11:28:08 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "lst.h"
+#include <stdio.h>
 
 int	ft_think(t_no *no)
 {

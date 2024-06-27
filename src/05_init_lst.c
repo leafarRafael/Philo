@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 08:10:32 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/26 16:39:28 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 11:24:03 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	init_lst(t_lst *lst)
 
 t_no	*init_node(t_input *philo)
 {
-	t_no *no;
+	t_no	*no;
 
 	no = malloc(sizeof(t_no));
 	if (!no)

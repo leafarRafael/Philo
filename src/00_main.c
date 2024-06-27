@@ -6,20 +6,19 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 07:48:30 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/26 10:33:15 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 11:56:18 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
 #include "lst.h"
-# include <stdio.h>
+#include "philo.h"
 
 static int	init_lst_philos(t_input *input, t_lst *lst);
 
 int	main(int argc, char *argv[])
 {
-	t_input			input;
-	t_lst			lst;
+	t_input	input;
+	t_lst	lst;
 
 	if (valid_arguments(argc, argv))
 		return (1);

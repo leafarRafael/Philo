@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 08:02:16 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/26 16:04:30 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 11:25:39 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,8 @@ long int	ft_atol(const char *nptr)
 
 static int	ft_is_space(const char c)
 {
-	return (c == ' ' || c == '\n'
-		|| c == '\f' || c == '\r'
-		|| c == '\t' || c == '\v');
+	return (c == ' ' || c == '\n' || c == '\f' || c == '\r' || c == '\t'
+		|| c == '\v');
 }
 
 static int	ft_isdigit(int c)

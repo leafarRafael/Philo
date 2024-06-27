@@ -6,15 +6,15 @@
 /*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 08:11:39 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/26 17:22:46 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/27 11:28:01 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 
-static int case_zero(t_lst *lst, t_no *node);
-static int case_one(t_lst *lst, t_no *node);
-static int case_two_more(t_lst *lst, t_no *node);
+static int	case_zero(t_lst *lst, t_no *node);
+static int	case_one(t_lst *lst, t_no *node);
+static int	case_two_more(t_lst *lst, t_no *node);
 
 int	add_back(t_lst *lst, t_input *philo)
 {
@@ -32,26 +32,23 @@ int	add_back(t_lst *lst, t_input *philo)
 	return (case_two_more(lst, no));
 }
 
-static int case_zero(t_lst *lst, t_no *node)
+static int	case_zero(t_lst *lst, t_no *node)
 {
-	node->mutex = &lst->mutex;
-	node->is_dead = &lst->is_dead;
-	node->dead = &lst->dead;
+	node->dead_mutex = &lst->dead_mutex;
 	node->out_mutex = &lst->output_mutex;
+	node->is_dead = &lst->is_dead;
 	lst->head = node;
 	lst->last = node;
 	lst->size++;
 	node->nbr_philo = lst->size;
 	return (0);
-
 }
 
-static int case_one(t_lst *lst, t_no *node)
+static int	case_one(t_lst *lst, t_no *node)
 {
-	node->mutex = &lst->mutex;
-	node->is_dead = &lst->is_dead;
-	node->dead = &lst->dead;
+	node->dead_mutex = &lst->dead_mutex;
 	node->out_mutex = &lst->output_mutex;
+	node->is_dead = &lst->is_dead;
 	node->prev = lst->head;
 	node->next = lst->head;
 	lst->head->next = node;
@@ -62,12 +59,11 @@ static int case_one(t_lst *lst, t_no *node)
 	return (0);
 }
 
-static int case_two_more(t_lst *lst, t_no *node)
+static int	case_two_more(t_lst *lst, t_no *node)
 {
-	node->mutex = &lst->mutex;
-	node->is_dead = &lst->is_dead;
-	node->dead = &lst->dead;
+	node->dead_mutex = &lst->dead_mutex;
 	node->out_mutex = &lst->output_mutex;
+	node->is_dead = &lst->is_dead;
 	node->prev = lst->last;
 	node->next = lst->head;
 	lst->last->next = node;
