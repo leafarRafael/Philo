@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_tread.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 09:41:13 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/27 15:24:14 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/28 09:01:53 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	init_tread(t_lst *lst)
 	{
 		if (pthread_create(&no->th_philo, NULL, &routine, no))
 			return (printf("error pthread_create()\n"));
-		usleep(0000300);
+		usleep(0000400);
 		no = no->next;
 		i++;
 	}

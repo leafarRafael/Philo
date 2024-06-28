@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+         #
+#    By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 07:47:48 by rbutzke           #+#    #+#              #
-#    Updated: 2024/06/27 15:45:53 by rbutzke          ###   ########.fr        #
+#    Updated: 2024/06/28 08:59:21 by rbutzke          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME			:= philo.a
 
 #-----------------------------------------------------------------------------------------
 # Compiler and flags
-CFLAGS			:= -Wall -Werror -Wextra -g3 -MMD -MP
+CFLAGS			:= -Wall -Werror -Wextra -g3 -MMD
 CC				:= cc
 O_FLAGS			:= -c
 
