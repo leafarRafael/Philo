@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   monitor.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 08:31:36 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/27 15:29:33 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/29 08:43:38 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	monitor(t_lst *lst)
 		if (valid_dead(node, lst))
 			break ;
 		node = node->next;
-		usleep(0000300);
 	}
 	return (0);
 }

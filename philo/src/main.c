@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbutzke <rbutzke@student.42sp.org.br>      +#+  +:+       +#+        */
+/*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 07:48:30 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/27 15:30:00 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/29 07:59:22 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	if (init_lst_philos(&input, &lst))
 		return (1);
-	if (ft_init_thread(&lst))
+	if (ft_init_thread(&lst, &input))
 		return (1);
 	if (ft_destroy_philos(&lst))
 		return (1);
@@ -49,7 +49,6 @@ static int	init_lst_philos(t_input *input, t_lst *lst)
 	if (init_lst(lst))
 		return (1);
 	i = 0;
-	input->start = get_time();
 	while (i < input->amount_philos)
 	{
 		if (add_back(lst, input))

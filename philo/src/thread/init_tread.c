@@ -6,7 +6,7 @@
 /*   By: rbutzke <rbutzke@student.42so.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 09:41:13 by rbutzke           #+#    #+#             */
-/*   Updated: 2024/06/28 09:01:53 by rbutzke          ###   ########.fr       */
+/*   Updated: 2024/06/29 10:32:09 by rbutzke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 #include <unistd.h>
 #include "routine.h"
 #include "monitor.h"
+#include <get_time.h>
 
 static int	init_mutex(t_lst *lst);
-static int	init_tread(t_lst *lst);
+static int	init_tread(t_lst *lst, t_input *input);
 static int	init_join(t_lst *lst);
 
-int	ft_init_thread(t_lst *lst)
+int	ft_init_thread(t_lst *lst, t_input *input)
 {
 	if (!lst || lst->size == 0)
 		return (1);
 	if (init_mutex(lst))
 		return (1);
-	if (init_tread(lst))
+	if (init_tread(lst, input))
 		return (1);
 	monitor(lst);
 	if (init_join(lst))
@@ -55,18 +56,19 @@ static int	init_mutex(t_lst *lst)
 	return (0);
 }
 
-static int	init_tread(t_lst *lst)
+static int	init_tread(t_lst *lst, t_input *input)
 {
 	int		i;
 	t_no	*no;
 
 	i = 0;
 	no = lst->head;
+	input->start = get_time();
 	while (i < lst->size)
 	{
 		if (pthread_create(&no->th_philo, NULL, &routine, no))
 			return (printf("error pthread_create()\n"));
-		usleep(0000400);
+		usleep(0001000);
 		no = no->next;
 		i++;
 	}
